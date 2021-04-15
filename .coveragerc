@@ -4,6 +4,7 @@ omit =
     */test_*.py
     */*_tests.py
     */__init__.py
+    */__main__.py
 exclude_lines =
     # Exclude coverage for lines of code that are not required
     pragma: no cover
