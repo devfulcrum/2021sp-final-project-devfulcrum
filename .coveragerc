@@ -1,0 +1,33 @@
+[report]
+omit =
+    */tests.py
+    */test_*.py
+    */*_tests.py
+    */__init__.py
+exclude_lines =
+    # Exclude coverage for lines of code that are not required
+    pragma: no cover
+
+    # Exclude coverage for debug code
+    def __repr__
+    def __str__
+    if self\.debug
+
+    # Exclude mandatory exceptions
+    raise AssertionError
+    raise NotImplementedError
+
+    # Exclude code return for local test and execution
+    if 0:
+    if __name__ == .__main__.:
+
+    # Skip unit testing the actual quiz submission
+    def submit_quiz_generic(quiz: Quiz):
+    def pset_submission():
+    with pset_submission():
+
+    # This method is for testing purpose only
+    def get_answers(questions: List[QuizSubmissionQuestion]) -> List[Dict]:
+
+    # Ignore multiple file remove lines of code
+    os.remove(temp_file_create.name)

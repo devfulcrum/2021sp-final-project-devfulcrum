@@ -1,0 +1,74 @@
+version: "2"
+plugins:
+  radon:
+    enabled: true
+  pylint:
+    enabled: true
+    checks:
+      import-error:
+        enabled: false
+      bad-continuation:
+        enabled: false
+      # Constant name xxxx doesn't conform to UPPER_CASE naming style
+      # Variable name xxx doesn't conform to snake_case naming style
+      invalid-name:
+        enabled: false
+      missing-module-docstring:
+        enabled: false
+      missing-function-docstring:
+        enabled: false
+      too-few-public-methods:
+        enabled: false
+      argument-count:
+        config:
+          threshold: 7
+      complex-logic:
+        config:
+          threshold: 10
+      file-lines:
+        config:
+          threshold: 750
+      method-complexity:
+        config:
+          threshold: 20
+      method-count:
+        config:
+          threshold: 50
+      method-lines:
+        config:
+          threshold: 75
+  checks:
+    import-error:
+      enabled: false
+    bad-continuation:
+      enabled: false
+    # Constant name xxxx doesn't conform to UPPER_CASE naming style
+    # Variable name xxx doesn't conform to snake_case naming style
+    invalid-name:
+      enabled: false
+    missing-module-docstring:
+      enabled: false
+    missing-function-docstring:
+      enabled: false
+    too-few-public-methods:
+      enabled: false
+    argument-count:
+      config:
+        threshold: 7
+    complex-logic:
+      config:
+        threshold: 10
+    file-lines:
+      config:
+        threshold: 750
+    method-complexity:
+      config:
+        threshold: 20
+    method-count:
+      config:
+        threshold: 50
+    method-lines:
+      config:
+        threshold: 75
+exclude_patterns:
+- "test_pset.py"

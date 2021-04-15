@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+
+[packages]
+awscli = "*"
+pandas = "*"
+environs = "*"
+canvasapi = "*"
+pyarrow = "*"
+openpyxl = "*"
+gitpython = "*"
+
+[requires]
+python_version = "3.8"
