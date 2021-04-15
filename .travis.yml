@@ -16,6 +16,8 @@ jobs:
   include:
     - stage: test
       script: pytest -v
+      before_install:
+        - echo -e "machine github.com\n  login $CI_USER_TOKEN" > ~/.netrc
       install:
         - pipenv install --dev --ignore-pipfile --deploy
       before_script: # code coverage tool
@@ -26,6 +28,10 @@ jobs:
       after_script:
         - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
     - stage: answers
+      before_install:
+        - echo -e "machine github.com\n  login $CI_USER_TOKEN" > ~/.netrc
+      install:
+        - pipenv install --dev --ignore-pipfile --deploy
       script:
       # Before running, get the data from s3 using the secret
       # credentials entered at https://travis-ci.com/csci-e-29/YOUR_PSET_REPO_NAME/settings

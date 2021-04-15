@@ -1,4 +1,6 @@
 FROM python:3.8 AS base
+ARG CI_USER_TOKEN
+RUN echo "machine github.com\n  login $CI_USER_TOKEN\n" > ~/.netrc
 
 ENV \
     PYTHONDONTWRITEBYTECODE=1 \
