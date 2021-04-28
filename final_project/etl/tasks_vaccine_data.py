@@ -251,3 +251,50 @@ class ByCountry(ETLAnalysisPrint):
     """
 
     input_data = Requirement(ByCountryAnalysis)
+
+
+class ByCountryMonthAnalysis(ETLAnalysis):
+    """
+    This class extends ETLAnalysis and implements perform_analysis method.  Calculates the
+    mean review length for decades and returns the dataframe.  This class also sets the
+    sub directory for storing the parquet file under by_country folder.
+    """
+
+    # sub directory for decade parquet file store
+    sub_dir = Parameter(default="by_country_month/")
+
+    def perform_analysis(self, analysis_dataframe):
+        """Performs actual computation of text length average per decade.
+
+        Args:
+            analysis_dataframe: Covid data by country
+        Returns:
+            dataframe that contains the review length average by decade
+        """
+
+        analysis_dataframe[
+            "Country"
+        ] = analysis_dataframe.Country_Region
+        analysis_dataframe[
+            "Year"
+        ] = analysis_dataframe.Date.dt.year
+        analysis_dataframe[
+            "Month"
+        ] = analysis_dataframe.Date.dt.month
+        analysis_dataframe["Doses"] = analysis_dataframe.Doses_admin.astype(int)
+
+        return (
+            analysis_dataframe.groupby(["Country", "Year", "Month"])
+            .Doses.max()
+            .round()
+            .astype(int)
+            .to_frame()
+        )
+
+
+class ByCountryMonth(ETLAnalysisPrint):
+    """
+    this class defines the requirement - ByCountryAnalysis and does the results print.
+    """
+
+    input_data = Requirement(ByCountryMonthAnalysis)
