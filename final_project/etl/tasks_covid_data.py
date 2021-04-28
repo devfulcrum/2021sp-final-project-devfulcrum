@@ -1,3 +1,4 @@
+import datetime
 import logging
 import os
 
@@ -18,7 +19,7 @@ logging.basicConfig(
 )
 
 
-class VaccineDataGlobalTask(ExternalTask):
+class CovidDataGlobalTask(ExternalTask):
     """Luigi ExternalTask to work with GIT CSVTarget. All three default variables
     (git_root, git_glob and git_ext) can be overridden.  The default values are used
     for working with a specific GIT download.  I have overridden them for test cases to work with
@@ -34,8 +35,8 @@ class VaccineDataGlobalTask(ExternalTask):
     """
 
     # default parameters
-    git_root = Parameter(default="https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/vaccine_data/global_data/")
-    git_glob = Parameter(default="time_series_covid19_vaccine_global")
+    git_root = Parameter(default="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/")
+    git_glob = Parameter(default="time_series_covid19_confirmed_global")
     git_ext = Parameter(default=".csv")
 
     # output functions uses this variable to return CSVTarget instance
@@ -49,7 +50,7 @@ class VaccineDataGlobalTask(ExternalTask):
     )
 
 
-class VaccineDataGlobalCleanupTask(Task):
+class CovidDataGlobalCleanupTask(Task):
     """Luigi Task to clean Yelp Review data. The Yelp reviews input are from
     External Task that specifies files in GIT. The cleaning from below code handles
     removing rows with null date, null user_id or invalid review_id and the
@@ -69,11 +70,11 @@ class VaccineDataGlobalCleanupTask(Task):
 
     # default parameters
     subset = BoolParameter(default=True)
-    data_root = Parameter(default="./data/vaccine/")
+    data_root = Parameter(default="./data/covid/")
 
     # External task completion is required, to work with GIT / CSVTarget
     requires = Requires()
-    input_data = Requirement(VaccineDataGlobalTask)
+    input_data = Requirement(CovidDataGlobalTask)
 
     # TargetOutput returns ParquetTarget
     output = TargetOutput(
@@ -94,28 +95,31 @@ class VaccineDataGlobalCleanupTask(Task):
         # read them as floats, fill nan's as 0, then convert to int.
         # You can provide a dict of {col: dtype} when providing the dtype arg in places like
         # read_parquet and astype.
-        number_columns = ["Doses_admin", "People_partially_vaccinated", "People_fully_vaccinated"]
+        cur_date = datetime.datetime.today()
+        logging.info(cur_date)
+        number_of_days = (cur_date - datetime.datetime.strptime("1/22/20", '%m/%d/%y')).days
+        logging.info(number_of_days)
+        number_columns = list()
+        for days in range(1, (number_of_days + 1)):
+            number_columns.append((datetime.datetime.now() - datetime.timedelta(days=days)).strftime("%-m/%-d/%y"))
+        logging.info(number_columns)
         # Ensure that the date column is parsed as a pandas datetime using parse_dates
-        vdg_dask = self.input()["input_data"].read_dask(
-            parse_dates=["Date"], dtype={c: "float" for c in number_columns}
-        )
+        cdg_dask = self.input()["input_data"].read_dask(dtype={c: "float" for c in number_columns})
 
         if self.subset:
-            vdg_dask = vdg_dask.get_partition(0)
+            cdg_dask = cdg_dask.get_partition(0)
 
         # perform data cleaning
         # Remove any blank countries
-        vdg_dask = vdg_dask[~vdg_dask.Country_Region.isnull()]
-        # Filter out invalid dates
-        vdg_dask = vdg_dask[~vdg_dask.Date.isnull()]
+        cdg_dask = cdg_dask[~cdg_dask[cdg_dask.columns[1]].isnull()]
 
         # You should set the index to Country_Region and ensure the output reads back with meaningful divisions
         # vdg_dask = vdg_dask.set_index("Country_Region")
-        vdg_dask[number_columns] = vdg_dask[number_columns].fillna(0).astype(int)
+        cdg_dask[number_columns] = cdg_dask[number_columns].fillna(0).astype(int)
 
         # write_dask parquet file output with gzip compression.
-        vdg_output = vdg_dask
-        self.output().write_dask(vdg_output, compression="gzip")
+        cdg_output = cdg_dask
+        self.output().write_dask(cdg_output, compression="gzip")
 
 
 class ETLAnalysis(Task):
@@ -143,10 +147,10 @@ class ETLAnalysis(Task):
     """
 
     subset = BoolParameter(default=True)
-    analysis_path = Parameter(default="./data/vaccine/")
+    analysis_path = Parameter(default="./data/covid/")
 
     requires = Requires()
-    input_data = Requirement(VaccineDataGlobalCleanupTask)
+    input_data = Requirement(CovidDataGlobalCleanupTask)
 
     # the output references a "sub_dir" parameter, which is expected to be defined
     # in a subclass
@@ -166,10 +170,7 @@ class ETLAnalysis(Task):
         Uses the three data points we need for analysis -> Country_Region and Date
         calls the implemented perform_analysis method to do the calculations
         """
-        analysis_dataframe = self.input()["input_data"].read_dask(
-            columns=["Country_Region", "Date", "Doses_admin", "People_partially_vaccinated",
-                     "People_fully_vaccinated", "Report_Date_String", "UID"]
-        )
+        analysis_dataframe = self.input()["input_data"].read_dask()
 
         # invoke perform_analysis from the implemented sub-classes
         # only gets the aggregated analysis column (stars, year, decade and weekday) and the review length
@@ -194,7 +195,7 @@ class ETLAnalysisPrint(Task):
 
     # Default parameters
     subset = BoolParameter(default=True)
-    analysis_path = Parameter(default="./data/vaccine/")
+    analysis_path = Parameter(default="./data/covid/")
 
     requires = Requires()
 
@@ -212,7 +213,7 @@ class ETLAnalysisPrint(Task):
         logging.info(analysis_output_dataframe.compute())
 
 
-class ByCountryVaccineAnalysis(ETLAnalysis):
+class ByCountryCovidAnalysis(ETLAnalysis):
     """
     This class extends ETLAnalysis and implements perform_analysis method.  Calculates the
     mean review length for decades and returns the dataframe.  This class also sets the
@@ -233,27 +234,28 @@ class ByCountryVaccineAnalysis(ETLAnalysis):
 
         analysis_dataframe[
             "Country"
-        ] = analysis_dataframe.Country_Region
-        analysis_dataframe["Doses"] = analysis_dataframe.Doses_admin.astype(int)
+        ] = analysis_dataframe['Country/Region']
+        analysis_dataframe["Confirmed"] = analysis_dataframe[
+            (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%-m/%-d/%y")].astype(int)
 
         return (
             analysis_dataframe.groupby("Country")
-            .Doses.max()
+            .Confirmed.sum()
             .round()
             .astype(int)
             .to_frame()
         )
 
 
-class ByCountryVaccine(ETLAnalysisPrint):
+class ByCountryCovid(ETLAnalysisPrint):
     """
     this class defines the requirement - ByCountryAnalysis and does the results print.
     """
 
-    input_data = Requirement(ByCountryVaccineAnalysis)
+    input_data = Requirement(ByCountryCovidAnalysis)
 
 
-class ByCountryMonthVaccineAnalysis(ETLAnalysis):
+class ByCountryMonthCovidAnalysis(ETLAnalysis):
     """
     This class extends ETLAnalysis and implements perform_analysis method.  Calculates the
     mean review length for decades and returns the dataframe.  This class also sets the
@@ -274,27 +276,27 @@ class ByCountryMonthVaccineAnalysis(ETLAnalysis):
 
         analysis_dataframe[
             "Country"
-        ] = analysis_dataframe.Country_Region
+        ] = analysis_dataframe['Country/Region']
         analysis_dataframe[
             "Year"
         ] = analysis_dataframe.Date.dt.year
         analysis_dataframe[
             "Month"
         ] = analysis_dataframe.Date.dt.month
-        analysis_dataframe["Doses"] = analysis_dataframe.Doses_admin.astype(int)
+        analysis_dataframe["Confirmed"] = analysis_dataframe.Doses_admin.astype(int)
 
         return (
             analysis_dataframe.groupby(["Country", "Year", "Month"])
-            .Doses.max()
+            .Confirmed.max()
             .round()
             .astype(int)
             .to_frame()
         )
 
 
-class ByCountryMonthVaccine(ETLAnalysisPrint):
+class ByCountryMonthCovid(ETLAnalysisPrint):
     """
     this class defines the requirement - ByCountryAnalysis and does the results print.
     """
 
-    input_data = Requirement(ByCountryMonthVaccineAnalysis)
+    input_data = Requirement(ByCountryMonthCovidAnalysis)
