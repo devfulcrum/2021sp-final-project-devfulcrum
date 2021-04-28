@@ -21,5 +21,6 @@ WORKDIR /app
 COPY Pipfile .
 COPY Pipfile.lock .
 RUN pipenv install --deploy --ignore-pipfile --dev
+RUN pipenv install -e git+https://github.com/csci-e-29/2021sp-csci-utils-devfulcrum#egg=csci_utils
 
 ENTRYPOINT ["pipenv", "run"]

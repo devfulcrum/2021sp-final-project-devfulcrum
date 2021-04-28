@@ -8,17 +8,18 @@ pytest = "*"
 pytest-cov = "*"
 
 [packages]
-awscli = "*"
+csci-utils = {editable = true, git = "https://github.com/csci-e-29/2021sp-csci-utils-devfulcrum"}
 pandas = "*"
 environs = "*"
-canvasapi = "*"
 pyarrow = "*"
 openpyxl = "*"
 gitpython = "*"
 luigi = "*"
-torch = "*"
-torchvision = "*"
-boto3 = "*"
+django = "*"
+seaborn = "*"
+datashader = "*"
+requests = "*"
+aiohttp = "*"
 
 [requires]
 python_version = "3.8"
