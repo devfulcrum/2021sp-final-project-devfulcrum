@@ -8,7 +8,7 @@ pytest = "*"
 pytest-cov = "*"
 
 [packages]
-csci-utils = {editable = true, git = "https://github.com/csci-e-29/2021sp-csci-utils-devfulcrum"}
+csci-utils = {git = "https://github.com/csci-e-29/2021sp-csci-utils-devfulcrum"}
 pandas = "*"
 environs = "*"
 pyarrow = "*"
@@ -20,6 +20,7 @@ seaborn = "*"
 datashader = "*"
 requests = "*"
 aiohttp = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.8"

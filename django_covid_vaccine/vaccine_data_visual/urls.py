@@ -1,0 +1,12 @@
+from django.conf.urls import url
+from django.views.generic import TemplateView
+
+from .api import CovidDataAPI, VaccineDataAPI
+
+urlpatterns = [
+    url(r'^covid_data$', CovidDataAPI.as_view()),
+    url(r'^vaccine_data$', VaccineDataAPI.as_view()),
+    url(r'^home_chart', TemplateView.as_view(template_name="vaccine_data_visual/home_chart.html")),
+    url(r'^home_angular', TemplateView.as_view(template_name="vaccine_data_visual/home_angular.html")),
+    url(r'^home_demo', TemplateView.as_view(template_name="vaccine_data_visual/home_demo.html")),
+]

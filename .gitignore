@@ -57,6 +57,7 @@ coverage.xml
 *.log
 local_settings.py
 db.sqlite3
+db.sqlite3.backup
 
 # Flask stuff:
 instance/
@@ -113,3 +114,4 @@ data_backup/
 data_backup2/
 data_backup3/
 data_backup4/
+data_backup5/

@@ -1,0 +1,90 @@
+{% block content %}
+
+  <div id="container" style="width: 40%;">
+    <canvas id="covid-data-chart" data-url="{% url 'covid-data-chart' %}"></canvas>
+    <canvas id="vaccine-data-chart" data-url="{% url 'vaccine-data-chart' %}"></canvas>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    $(function () {
+
+      var $covidDataChart = $("#covid-data-chart");
+      $.ajax({
+        url: $covidDataChart.data("url"),
+        success: function (data) {
+
+          var ctx = $covidDataChart[0].getContext("2d");
+
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: data.country,
+                backgroundColor: 'red',
+                data: data.data
+              }]          
+            },
+            options: {
+              responsive: true,
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'Covid Data Bar Chart'
+              }
+            }
+          });
+
+        }
+      });
+
+    });
+
+  </script>
+
+  <script>
+
+    $(function () {
+
+      var $vaccineDataChart = $("#vaccine-data-chart");
+      $.ajax({
+        url: $vaccineDataChart.data("url"),
+        success: function (data) {
+
+          var ctx = $vaccineDataChart[0].getContext("2d");
+
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: data.country,
+                backgroundColor: 'green',
+                data: data.data
+              }]
+            },
+            options: {
+              responsive: true,
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'Vaccine Data Bar Chart'
+              }
+            }
+          });
+
+        }
+      });
+
+    });
+
+  </script>
+
+{% endblock %}

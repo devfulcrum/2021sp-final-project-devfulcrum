@@ -17,17 +17,22 @@ def read_vaccine_data_file():
     sns.barplot(x="Country_Region", y="Doses_admin", hue="People_fully_vaccinated", data=df_doses_admin_over_200mil)
 
     # lat, lon for every person in census!
-    cvs = ds.Canvas(plot_width=850, plot_height=500)
-    agg = cvs.points(df,
-                     'lon'
-                     ,
-                     'lat')
-    tf.shade(agg, how='eq_hist')
+    # cvs = ds.Canvas(plot_width=850, plot_height=500)
+    # agg = cvs.points(df,
+    #                  'lon'
+    #                  ,
+    #                  'lat')
+    # tf.shade(agg, how='eq_hist')
 
     plt.show()
     return
 
 
-
+# colorbrewer2.org
+# dash.plotly.com
+# holoviz.org
+# bokeh
+# matplotlib
+# seaborn
 if __name__ == "__main__":
     read_vaccine_data_file()
