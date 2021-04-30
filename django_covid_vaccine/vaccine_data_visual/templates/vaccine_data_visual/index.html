@@ -6,32 +6,40 @@
     <title>Final Project Visualization</title>
 </head>
 <body>
-    <div>
-        <span>Covid Data by Country Dashboard</span>
-    </div>
-    <div id="container" style="width: 35%;">
-        <canvas id="chart" height="250" width="400">
-        </canvas>
-    </div>
-    <div>
-        <br>
-        <label for="cname">Filter by Country: </label>
-        <input type="text" id="cname" name="cname" value="Australia">
-        <button id="refreshButton">Refresh</button>
-    </div>
-    <div>
-        <span>Vaccine Data by Country Dashboard</span>
-    </div>
-    <div id="container2" style="width: 35%;">
-        <canvas id="chart2" height="250" width="400">
-        </canvas>
-    </div>
-    <div>
-        <br>
-        <label for="cname2">Filter by Country: </label>
-        <input type="text" id="cname2" name="cname2" value="Australia">
-        <button id="refreshButton2">Refresh</button>
-    </div>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <span>Covid Data by Country Dashboard</span>
+                </div>
+                <div id="container">
+                    <canvas id="chart" height="250" width="400">
+                    </canvas>
+                </div>
+                <div>
+                    <br>
+                    <label for="cname">Filter by Country: </label>
+                    <input type="text" id="cname" name="cname" value="Australia">
+                    <button id="refreshButton">Refresh</button>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <span>Vaccine Data by Country Dashboard</span>
+                </div>
+                <div id="container2">
+                    <canvas id="chart2" height="250" width="400">
+                    </canvas>
+                </div>
+                <div>
+                    <br>
+                    <label for="cname2">Filter by Country: </label>
+                    <input type="text" id="cname2" name="cname2" value="Australia">
+                    <button id="refreshButton2">Refresh</button>
+                </div>
+            </td>
+        </tr>
+    </table>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
     <script src="{% static "vaccine_data_visual/site.js" %}"></script>
     <script src="{% static "vaccine_data_visual/site2.js" %}"></script>
