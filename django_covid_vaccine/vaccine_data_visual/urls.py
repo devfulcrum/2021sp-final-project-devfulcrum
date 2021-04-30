@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^home_chart', TemplateView.as_view(template_name="vaccine_data_visual/home_chart.html")),
     url(r'^home_angular', TemplateView.as_view(template_name="vaccine_data_visual/home_angular.html")),
     url(r'^home_demo', TemplateView.as_view(template_name="vaccine_data_visual/home_demo.html")),
+    url(r'^index', TemplateView.as_view(template_name="vaccine_data_visual/index.html")),
 ]
