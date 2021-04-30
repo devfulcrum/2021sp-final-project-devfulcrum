@@ -7,7 +7,7 @@ from final_project.etl.covid_data_deaths_time_series_global import CovidDataDeat
 from final_project.etl.covid_data_deaths_time_series_us import CovidDataDeathsTimeSeriesUS
 from final_project.etl.covid_data_recovered_time_series_global import CovidDataRecoveredTimeSeriesGlobal
 from final_project.etl.covid_testing_data_time_series_us import CovidTestingData
-from final_project.etl.tasks_covid_data import ByCountryCovid
+from final_project.etl.tasks_covid_data import ByCountryCovid, ByCountryMonthCovid
 from final_project.etl.tasks_vaccine_data import ByCountryVaccine, ByCountryMonthVaccine
 from final_project.etl.vaccine_data_global import VaccineDataGlobal
 from final_project.etl.vaccine_data_time_series_global import VaccineDataTimeSeriesGlobal
@@ -33,3 +33,4 @@ if __name__ == "__main__":
     build([ByCountryVaccine(subset=False)], local_scheduler=True)
     build([ByCountryMonthVaccine(subset=False)], local_scheduler=True)
     build([ByCountryCovid(subset=False)], local_scheduler=True)
+    build([ByCountryMonthCovid(subset=False)], local_scheduler=True)

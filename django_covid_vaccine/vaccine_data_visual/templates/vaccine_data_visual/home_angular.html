@@ -1,0 +1,24 @@
+{% load static %}
+
+<html>
+    <body ng-app="vaccine_data_visual.demo">
+
+        {% verbatim %}
+        <div ng-controller = "VaccineDataVisualController">
+
+            <input type="text" value="US" ng-model="filterBy">
+            <div class="list" ng-repeat="list in data | filter:filterBy:true">
+                <h3> {{ list.country }}</h3>
+                <ul>
+                    <li> Published Date: {{ list.date }} </li>
+                    <li> Confirmed Cases: {{ list.confirmed }} </li>
+                </ul>
+            </div>
+        </div>
+        {% endverbatim %}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src="{% static "vaccine_data_visual/vaccine_data_visual.js" %}"></script>
+
+    </body>
+</html>

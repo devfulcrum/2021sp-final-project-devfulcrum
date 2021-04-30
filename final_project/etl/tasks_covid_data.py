@@ -10,6 +10,7 @@ from csci_utils.luigi.target.task import (
     Requirement,
     TargetOutput,
 )
+from pytz import timezone
 
 os.environ["TZ"] = "US/Eastern"
 logging.basicConfig(
@@ -95,13 +96,14 @@ class CovidDataGlobalCleanupTask(Task):
         # read them as floats, fill nan's as 0, then convert to int.
         # You can provide a dict of {col: dtype} when providing the dtype arg in places like
         # read_parquet and astype.
-        cur_date = datetime.datetime.today()
+        est = timezone('EST')
+        cur_date = datetime.datetime.now(est)
         logging.info(cur_date)
-        number_of_days = (cur_date - datetime.datetime.strptime("1/22/20", '%m/%d/%y')).days
+        number_of_days = (cur_date - datetime.datetime.strptime("1/22/20", '%m/%d/%y').astimezone(est)).days
         logging.info(number_of_days)
         number_columns = list()
         for days in range(1, (number_of_days + 1)):
-            number_columns.append((datetime.datetime.now() - datetime.timedelta(days=days)).strftime("%-m/%-d/%y"))
+            number_columns.append((datetime.datetime.now(est) - datetime.timedelta(days=days)).strftime("%-m/%-d/%y"))
         logging.info(number_columns)
         # Ensure that the date column is parsed as a pandas datetime using parse_dates
         cdg_dask = self.input()["input_data"].read_dask(dtype={c: "float" for c in number_columns})
@@ -274,16 +276,27 @@ class ByCountryMonthCovidAnalysis(ETLAnalysis):
             dataframe that contains the review length average by decade
         """
 
-        analysis_dataframe[
-            "Country"
-        ] = analysis_dataframe['Country/Region']
-        analysis_dataframe[
-            "Year"
-        ] = analysis_dataframe.Date.dt.year
-        analysis_dataframe[
-            "Month"
-        ] = analysis_dataframe.Date.dt.month
-        analysis_dataframe["Confirmed"] = analysis_dataframe.Doses_admin.astype(int)
+        est = timezone('EST')
+        cur_date = datetime.datetime.now(est)
+        logging.info(cur_date)
+        number_of_days = (cur_date - datetime.datetime.strptime("1/22/20", '%m/%d/%y').astimezone(est)).days
+        logging.info(number_of_days)
+        number_columns = list()
+        for days in range(1, (number_of_days + 1)):
+            number_columns.append((datetime.datetime.now(est) - datetime.timedelta(days=days)).strftime("%-m/%-d/%y"))
+        logging.info(number_columns)
+
+        for col_name in number_columns:
+            analysis_dataframe[
+                "Country"
+            ] = analysis_dataframe['Country/Region']
+            analysis_dataframe[
+                "Year"
+            ] = datetime.datetime.strptime(col_name, '%m/%d/%y').year
+            analysis_dataframe[
+                "Month"
+            ] = datetime.datetime.strptime(col_name, '%m/%d/%y').month
+            analysis_dataframe["Confirmed"] = analysis_dataframe[col_name].astype(int)
 
         return (
             analysis_dataframe.groupby(["Country", "Year", "Month"])
