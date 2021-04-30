@@ -9,7 +9,12 @@ from ...models import CovidData
 
 
 class Command(BaseCommand):
-    help = "Load Covid and Vaccine data"
+    """
+    Command class for loading covid data to sqlite database table.
+    Works with data from the completed by ETL activities and further aggregates
+    the data for reporting purpose.
+    """
+    help = "Load Covid data to covid_data table"
 
     def handle(self, *args, **options):
         est = timezone('EST')

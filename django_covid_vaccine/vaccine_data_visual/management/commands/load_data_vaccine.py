@@ -8,7 +8,12 @@ from ...models import VaccineData
 
 
 class Command(BaseCommand):
-    help = "Load Covid and Vaccine data"
+    """
+    Command class for loading vaccine data to sqlite database table.
+    Works with data from the completed by ETL activities and further aggregates
+    the data for reporting purpose.
+    """
+    help = "Load Vaccine data to vaccine_data table"
 
     def handle(self, *args, **options):
         df = pd.read_parquet('../data/vaccine/subset-False/part.0.parquet', engine='pyarrow')

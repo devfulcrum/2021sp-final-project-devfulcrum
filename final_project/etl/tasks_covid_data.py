@@ -24,7 +24,7 @@ class CovidDataGlobalTask(ExternalTask):
     """Luigi ExternalTask to work with GIT CSVTarget. All three default variables
     (git_root, git_glob and git_ext) can be overridden.  The default values are used
     for working with a specific GIT download.  I have overridden them for test cases to work with
-    local mock data
+    local mock data.
 
     Parameters:
         git_root: str, git root directory path
@@ -52,10 +52,9 @@ class CovidDataGlobalTask(ExternalTask):
 
 
 class CovidDataGlobalCleanupTask(Task):
-    """Luigi Task to clean Yelp Review data. The Yelp reviews input are from
+    """Luigi Task to clean Covid time series data. The input is from
     External Task that specifies files in GIT. The cleaning from below code handles
-    removing rows with null date, null user_id or invalid review_id and the
-    output is indexed on review_id.
+    removing rows with null date and confirmed cases values are non-zero.
     The default parameters can be overridden for testing and I have overridden for
     all test cases.
 
@@ -87,11 +86,13 @@ class CovidDataGlobalCleanupTask(Task):
     )
 
     def run(self):
-        """Clean Yelp Review data from Task input and stores dataframe in Parquet format.
-        I have included notes from readme below for tracking the assignment requirements
+        """
+        Clean Covid data from Task input and stores dataframe in Parquet format.
+        :return:
+            File content is stored in the data directory
         """
 
-        # The columns ["Doses_admin", "People_partially_vaccinated", "People_fully_vaccinated"]
+        # The columns [460 plus date data column contains confirmed covid cases numbers]
         # are all integers. However, given there are missing values, you must first
         # read them as floats, fill nan's as 0, then convert to int.
         # You can provide a dict of {col: dtype} when providing the dtype arg in places like
@@ -127,7 +128,7 @@ class CovidDataGlobalCleanupTask(Task):
 class ETLAnalysis(Task):
     """Created an abstract class for conducting analysis of covid data
     at different levels - by country, by year, by month and by week.  This is a luigi
-    task and sub-classed by the different levels of yelp review tasks.  The analysis
+    task and sub-classed by the different levels of covid data analysis tasks.  The analysis
     abstract class requires Cleanup and the parquet files for performing
     the analysis and display.
 
@@ -169,13 +170,13 @@ class ETLAnalysis(Task):
 
     def run(self):
         """
-        Uses the three data points we need for analysis -> Country_Region and Date
+        Uses the data points we need for analysis -> Country_Region and Date
         calls the implemented perform_analysis method to do the calculations
         """
         analysis_dataframe = self.input()["input_data"].read_dask()
 
         # invoke perform_analysis from the implemented sub-classes
-        # only gets the aggregated analysis column (stars, year, decade and weekday) and the review length
+        # only gets the aggregated analysis column and the calculated column
         output_dataframe = self.perform_analysis(analysis_dataframe)
         # write_dask parquet file output with gzip compression.
         self.output().write_dask(output_dataframe, write_index=True, compression="gzip")
@@ -192,7 +193,7 @@ class ETLAnalysisPrint(Task):
         analysis_path: str, final results are stored as parquet files here
 
     Output:
-        print the analysis dataframe for visual, to be used for canvas submission
+        print the analysis dataframe for visual
     """
 
     # Default parameters
@@ -209,7 +210,7 @@ class ETLAnalysisPrint(Task):
 
     def run(self):
         """
-        Read the dask, compute and print. To be used for pset5 canvas submission as well
+        Read the dask, compute and print.
         """
         analysis_output_dataframe = self.input()["input_data"].read_dask()
         logging.info(analysis_output_dataframe.compute())
@@ -218,20 +219,20 @@ class ETLAnalysisPrint(Task):
 class ByCountryCovidAnalysis(ETLAnalysis):
     """
     This class extends ETLAnalysis and implements perform_analysis method.  Calculates the
-    mean review length for decades and returns the dataframe.  This class also sets the
-    sub directory for storing the parquet file under by_country folder.
+    sum of confirmed cases for covid data by country and returns the dataframe.
+    This class also sets the sub directory for storing the parquet file under by_country folder.
     """
 
     # sub directory for decade parquet file store
     sub_dir = Parameter(default="by_country/")
 
     def perform_analysis(self, analysis_dataframe):
-        """Performs actual computation of text length average per decade.
+        """Performs actual computation of confirmed cases by country.
 
         Args:
-            analysis_dataframe: Covid data by country
+            analysis_dataframe: Covid data
         Returns:
-            dataframe that contains the review length average by decade
+            dataframe that contains the calculated results
         """
 
         analysis_dataframe[
@@ -260,20 +261,20 @@ class ByCountryCovid(ETLAnalysisPrint):
 class ByCountryMonthCovidAnalysis(ETLAnalysis):
     """
     This class extends ETLAnalysis and implements perform_analysis method.  Calculates the
-    mean review length for decades and returns the dataframe.  This class also sets the
-    sub directory for storing the parquet file under by_country folder.
+    sum of confirmed cases for covid data by country, month and returns the dataframe.
+    This class also sets the sub directory for storing the parquet file under by_country_month folder.
     """
 
     # sub directory for decade parquet file store
     sub_dir = Parameter(default="by_country_month/")
 
     def perform_analysis(self, analysis_dataframe):
-        """Performs actual computation of text length average per decade.
+        """Performs actual computation of confirmed cases by country and month.
 
         Args:
-            analysis_dataframe: Covid data by country
+            analysis_dataframe: Covid data
         Returns:
-            dataframe that contains the review length average by decade
+            dataframe that contains the calculated results
         """
 
         est = timezone('EST')
@@ -309,7 +310,7 @@ class ByCountryMonthCovidAnalysis(ETLAnalysis):
 
 class ByCountryMonthCovid(ETLAnalysisPrint):
     """
-    this class defines the requirement - ByCountryAnalysis and does the results print.
+    this class defines the requirement - ByCountryMonthAnalysis and does the results print.
     """
 
     input_data = Requirement(ByCountryMonthCovidAnalysis)
