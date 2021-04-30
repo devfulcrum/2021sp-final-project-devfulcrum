@@ -8,6 +8,7 @@ def home_demo(request):
 
 
 def covid_data_chart(request):
+    print(request)
     labels = []
     data = []
 
@@ -24,6 +25,7 @@ def covid_data_chart(request):
 
 
 def vaccine_data_chart(request):
+    print(request)
     labels = []
     data = []
 
