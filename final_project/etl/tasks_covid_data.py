@@ -108,7 +108,7 @@ class CovidDataGlobalCleanupTask(Task):
         ).days
         logging.info(number_of_days)
         number_columns = list()
-        for days in range(1, (number_of_days + 1)):
+        for days in range(1, number_of_days):
             number_columns.append(
                 (datetime.datetime.now(est) - datetime.timedelta(days=days)).strftime(
                     "%-m/%-d/%y"
@@ -249,7 +249,7 @@ class ByCountryCovidAnalysis(ETLAnalysis):
 
         analysis_dataframe["Country"] = analysis_dataframe["Country/Region"]
         analysis_dataframe["Confirmed"] = analysis_dataframe[
-            (datetime.datetime.now() - datetime.timedelta(days=1)).strftime(
+            (datetime.datetime.now() - datetime.timedelta(days=2)).strftime(
                 "%-m/%-d/%y"
             )
         ].astype(int)
@@ -299,7 +299,7 @@ class ByCountryMonthCovidAnalysis(ETLAnalysis):
         ).days
         logging.info(number_of_days)
         number_columns = list()
-        for days in range(1, (number_of_days + 1)):
+        for days in range(1, number_of_days):
             number_columns.append(
                 (datetime.datetime.now(est) - datetime.timedelta(days=days)).strftime(
                     "%-m/%-d/%y"
