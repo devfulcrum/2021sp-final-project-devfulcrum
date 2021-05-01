@@ -6,6 +6,11 @@ from datashader import transfer_functions as tf
 
 
 def read_vaccine_data_file():
+    """
+    Read vaccine data file and build visualizations for local testing and validations
+    :return:
+        The generated visuals as output for validations and testing.
+    """
     sns.set_theme(style="whitegrid")
     df = pd.read_csv("../../data/vaccine_data_global.csv")
     df_filter = df["Doses_admin"] > 199999999
@@ -28,6 +33,7 @@ def read_vaccine_data_file():
     return
 
 
+# Some of the example sites and packages reviewed from August session
 # colorbrewer2.org
 # dash.plotly.com
 # holoviz.org
@@ -35,4 +41,7 @@ def read_vaccine_data_file():
 # matplotlib
 # seaborn
 if __name__ == "__main__":
+    """
+    For running locally and validating the visuals that can be implemented
+    """
     read_vaccine_data_file()

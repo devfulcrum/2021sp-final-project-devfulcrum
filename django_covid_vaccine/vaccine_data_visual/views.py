@@ -4,10 +4,26 @@ from .models import CovidData, VaccineData
 
 
 def home_demo(request):
+    """
+    Template Function handles http request / response and HTML page rendering.
+
+    :param request: gets the http request and returns response for rendering the HTML
+
+    :return: render, html page response
+    """
+
     return render(request, 'home_demo.html')
 
 
 def covid_data_chart(request):
+    """
+    Handles http request and responds with formatted JSON data for covid for a given country
+
+    :param request: http request
+
+    :return: formatted JSON data response
+    """
+
     print(request)
     labels = []
     data = []
@@ -25,6 +41,14 @@ def covid_data_chart(request):
 
 
 def vaccine_data_chart(request):
+    """
+    Handles http request and responds with formatted JSON data for vaccine for a given country
+
+    :param request: http request
+
+    :return: formatted JSON data response
+    """
+
     print(request)
     labels = []
     data = []
