@@ -36,7 +36,9 @@ class CovidDataGlobalTask(ExternalTask):
     """
 
     # default parameters
-    git_root = Parameter(default="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/")
+    git_root = Parameter(
+        default="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/"
+    )
     git_glob = Parameter(default="time_series_covid19_confirmed_global")
     git_ext = Parameter(default=".csv")
 
@@ -88,6 +90,7 @@ class CovidDataGlobalCleanupTask(Task):
     def run(self):
         """
         Clean Covid data from Task input and stores dataframe in Parquet format.
+
         :return:
             File content is stored in the data directory
         """
@@ -97,17 +100,25 @@ class CovidDataGlobalCleanupTask(Task):
         # read them as floats, fill nan's as 0, then convert to int.
         # You can provide a dict of {col: dtype} when providing the dtype arg in places like
         # read_parquet and astype.
-        est = timezone('EST')
+        est = timezone("EST")
         cur_date = datetime.datetime.now(est)
         logging.info(cur_date)
-        number_of_days = (cur_date - datetime.datetime.strptime("1/22/20", '%m/%d/%y').astimezone(est)).days
+        number_of_days = (
+            cur_date - datetime.datetime.strptime("1/22/20", "%m/%d/%y").astimezone(est)
+        ).days
         logging.info(number_of_days)
         number_columns = list()
         for days in range(1, (number_of_days + 1)):
-            number_columns.append((datetime.datetime.now(est) - datetime.timedelta(days=days)).strftime("%-m/%-d/%y"))
+            number_columns.append(
+                (datetime.datetime.now(est) - datetime.timedelta(days=days)).strftime(
+                    "%-m/%-d/%y"
+                )
+            )
         logging.info(number_columns)
         # Ensure that the date column is parsed as a pandas datetime using parse_dates
-        cdg_dask = self.input()["input_data"].read_dask(dtype={c: "float" for c in number_columns})
+        cdg_dask = self.input()["input_data"].read_dask(
+            dtype={c: "float" for c in number_columns}
+        )
 
         if self.subset:
             cdg_dask = cdg_dask.get_partition(0)
@@ -231,15 +242,17 @@ class ByCountryCovidAnalysis(ETLAnalysis):
 
         Args:
             analysis_dataframe: Covid data
+
         Returns:
             dataframe that contains the calculated results
         """
 
-        analysis_dataframe[
-            "Country"
-        ] = analysis_dataframe['Country/Region']
+        analysis_dataframe["Country"] = analysis_dataframe["Country/Region"]
         analysis_dataframe["Confirmed"] = analysis_dataframe[
-            (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%-m/%-d/%y")].astype(int)
+            (datetime.datetime.now() - datetime.timedelta(days=1)).strftime(
+                "%-m/%-d/%y"
+            )
+        ].astype(int)
 
         return (
             analysis_dataframe.groupby("Country")
@@ -273,30 +286,35 @@ class ByCountryMonthCovidAnalysis(ETLAnalysis):
 
         Args:
             analysis_dataframe: Covid data
+
         Returns:
             dataframe that contains the calculated results
         """
 
-        est = timezone('EST')
+        est = timezone("EST")
         cur_date = datetime.datetime.now(est)
         logging.info(cur_date)
-        number_of_days = (cur_date - datetime.datetime.strptime("1/22/20", '%m/%d/%y').astimezone(est)).days
+        number_of_days = (
+            cur_date - datetime.datetime.strptime("1/22/20", "%m/%d/%y").astimezone(est)
+        ).days
         logging.info(number_of_days)
         number_columns = list()
         for days in range(1, (number_of_days + 1)):
-            number_columns.append((datetime.datetime.now(est) - datetime.timedelta(days=days)).strftime("%-m/%-d/%y"))
+            number_columns.append(
+                (datetime.datetime.now(est) - datetime.timedelta(days=days)).strftime(
+                    "%-m/%-d/%y"
+                )
+            )
         logging.info(number_columns)
 
         for col_name in number_columns:
-            analysis_dataframe[
-                "Country"
-            ] = analysis_dataframe['Country/Region']
-            analysis_dataframe[
-                "Year"
-            ] = datetime.datetime.strptime(col_name, '%m/%d/%y').year
-            analysis_dataframe[
-                "Month"
-            ] = datetime.datetime.strptime(col_name, '%m/%d/%y').month
+            analysis_dataframe["Country"] = analysis_dataframe["Country/Region"]
+            analysis_dataframe["Year"] = datetime.datetime.strptime(
+                col_name, "%m/%d/%y"
+            ).year
+            analysis_dataframe["Month"] = datetime.datetime.strptime(
+                col_name, "%m/%d/%y"
+            ).month
             analysis_dataframe["Confirmed"] = analysis_dataframe[col_name].astype(int)
 
         return (

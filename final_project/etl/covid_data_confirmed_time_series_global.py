@@ -14,6 +14,7 @@ class CovidDataConfirmedTimeSeriesGlobal(luigi.Task):
     def output(self):
         """
         This function returns the Local target for data download.
+
         :return:
             LocalTarget: returns luigi.LocalTarget for time_series_covid19_confirmed_global.csv
         """
@@ -24,6 +25,7 @@ class CovidDataConfirmedTimeSeriesGlobal(luigi.Task):
         """
         This function uses the etl_url parameters to perform http get request and
         write the response content to the local target.
+
         :return:
             File content is stored in the data directory
         """

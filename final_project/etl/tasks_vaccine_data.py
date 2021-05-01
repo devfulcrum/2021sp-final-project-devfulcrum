@@ -34,7 +34,9 @@ class VaccineDataGlobalTask(ExternalTask):
     """
 
     # default parameters
-    git_root = Parameter(default="https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/vaccine_data/global_data/")
+    git_root = Parameter(
+        default="https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/vaccine_data/global_data/"
+    )
     git_glob = Parameter(default="time_series_covid19_vaccine_global")
     git_ext = Parameter(default=".csv")
 
@@ -86,6 +88,7 @@ class VaccineDataGlobalCleanupTask(Task):
     def run(self):
         """
         Clean Vaccine data from Task input and stores dataframe in Parquet format.
+
         :return:
             File content is stored in the data directory
         """
@@ -95,7 +98,11 @@ class VaccineDataGlobalCleanupTask(Task):
         # read them as floats, fill nan's as 0, then convert to int.
         # You can provide a dict of {col: dtype} when providing the dtype arg in places like
         # read_parquet and astype.
-        number_columns = ["Doses_admin", "People_partially_vaccinated", "People_fully_vaccinated"]
+        number_columns = [
+            "Doses_admin",
+            "People_partially_vaccinated",
+            "People_fully_vaccinated",
+        ]
         # Ensure that the date column is parsed as a pandas datetime using parse_dates
         vdg_dask = self.input()["input_data"].read_dask(
             parse_dates=["Date"], dtype={c: "float" for c in number_columns}
@@ -168,8 +175,15 @@ class ETLAnalysis(Task):
         calls the implemented perform_analysis method to do the calculations
         """
         analysis_dataframe = self.input()["input_data"].read_dask(
-            columns=["Country_Region", "Date", "Doses_admin", "People_partially_vaccinated",
-                     "People_fully_vaccinated", "Report_Date_String", "UID"]
+            columns=[
+                "Country_Region",
+                "Date",
+                "Doses_admin",
+                "People_partially_vaccinated",
+                "People_fully_vaccinated",
+                "Report_Date_String",
+                "UID",
+            ]
         )
 
         # invoke perform_analysis from the implemented sub-classes
@@ -228,13 +242,12 @@ class ByCountryVaccineAnalysis(ETLAnalysis):
 
         Args:
             analysis_dataframe: Vaccine data
+
         Returns:
             dataframe that contains the calculated results
         """
 
-        analysis_dataframe[
-            "Country"
-        ] = analysis_dataframe.Country_Region
+        analysis_dataframe["Country"] = analysis_dataframe.Country_Region
         analysis_dataframe["Doses"] = analysis_dataframe.Doses_admin.astype(int)
 
         return (
@@ -269,19 +282,14 @@ class ByCountryMonthVaccineAnalysis(ETLAnalysis):
 
         Args:
             analysis_dataframe: Vaccine data
+
         Returns:
             dataframe that contains the calculated results
         """
 
-        analysis_dataframe[
-            "Country"
-        ] = analysis_dataframe.Country_Region
-        analysis_dataframe[
-            "Year"
-        ] = analysis_dataframe.Date.dt.year
-        analysis_dataframe[
-            "Month"
-        ] = analysis_dataframe.Date.dt.month
+        analysis_dataframe["Country"] = analysis_dataframe.Country_Region
+        analysis_dataframe["Year"] = analysis_dataframe.Date.dt.year
+        analysis_dataframe["Month"] = analysis_dataframe.Date.dt.month
         analysis_dataframe["Doses"] = analysis_dataframe.Doses_admin.astype(int)
 
         return (
