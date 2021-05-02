@@ -3,6 +3,7 @@
 
 """Tests for `final_project` package."""
 from unittest import TestCase
+from final_project.visual import linear_regression
 
 
 class MainProjectLevelTests(TestCase):
@@ -16,4 +17,5 @@ class MainProjectLevelTests(TestCase):
         :return:
 
         """
+        linear_regression.visual_demo()
         self.assertTrue(True)
