@@ -10,4 +10,6 @@ urlpatterns = [
     url(r'^home_angular', TemplateView.as_view(template_name="vaccine_data_visual/home_angular.html")),
     url(r'^home_demo', TemplateView.as_view(template_name="vaccine_data_visual/home_demo.html")),
     url(r'^index', TemplateView.as_view(template_name="vaccine_data_visual/index.html")),
+    url(r'^home_tf', TemplateView.as_view(template_name="vaccine_data_visual/home_tf.html")),
+    url(r'^home_lin_reg', TemplateView.as_view(template_name="vaccine_data_visual/home_lin_reg.html")),
 ]

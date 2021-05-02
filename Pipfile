@@ -21,6 +21,8 @@ datashader = "*"
 requests = "*"
 aiohttp = "*"
 djangorestframework = "*"
+scikit-learn = "*"
+numpy = "*"
 
 [requires]
 python_version = "3.8"

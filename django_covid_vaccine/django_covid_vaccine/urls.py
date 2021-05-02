@@ -27,4 +27,10 @@ urlpatterns = [
     path(r'vaccine_data_visual/', include('vaccine_data_visual.urls')),
     path('covid-data-chart/', views.covid_data_chart, name='covid-data-chart'),
     path('vaccine-data-chart/', views.vaccine_data_chart, name='vaccine-data-chart'),
+    path('vaccine-covid-data-aggregation/', views.vaccine_covid_data_aggregation,
+         name='vaccine-covid-data-aggregation'),
+    path('covid-cases-predict/', views.covid_cases_predict,
+         name='covid-cases-predict'),
+    path('vaccine-doses-predict/', views.vaccine_doses_predict,
+         name='vaccine-doses-predict'),
 ]

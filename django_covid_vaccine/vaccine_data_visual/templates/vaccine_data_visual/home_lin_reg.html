@@ -1,0 +1,85 @@
+{% load static %}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Final Project Visualization</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <span>Covid Data by Country Dashboard</span>
+                </div>
+                <div id="container">
+                    <canvas id="chart" height="250" width="400">
+                    </canvas>
+                </div>
+                <div>
+                    <br>
+                    <label for="cname">Filter by Country: </label>
+                    <input type="text" id="cname" name="cname" value="Australia">
+                    <button id="refreshButton">Refresh</button>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <span>Vaccine Data by Country Dashboard</span>
+                </div>
+                <div id="container2">
+                    <canvas id="chart2" height="250" width="400">
+                    </canvas>
+                </div>
+                <div>
+                    <br>
+                    <label for="cname2">Filter by Country: </label>
+                    <input type="text" id="cname2" name="cname2" value="Australia">
+                    <button id="refreshButton2">Refresh</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <div>
+                        <span>Covid Data Next 3 days Prediction by Country Dashboard</span>
+                    </div>
+                    <div id="container3">
+                        <canvas id="chart3" height="50" width="100">
+                        </canvas>
+                    </div>
+                    <div>
+                        <br>
+                        <label for="cname3">Filter by Country: </label>
+                        <input type="text" id="cname3" name="cname3" value="Australia">
+                        <button id="refreshButton3">Refresh</button>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span>Vaccine Doses Next 3 days Prediction by Country Dashboard</span>
+                    </div>
+                    <div id="container4">
+                        <canvas id="chart4" height="50" width="100">
+                        </canvas>
+                    </div>
+                    <div>
+                        <br>
+                        <label for="cname4">Filter by Country: </label>
+                        <input type="text" id="cname4" name="cname4" value="Australia">
+                        <button id="refreshButton4">Refresh</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script src="{% static "vaccine_data_visual/site.js" %}"></script>
+    <script src="{% static "vaccine_data_visual/site2.js" %}"></script>
+    <script src="{% static "vaccine_data_visual/site_pred.js" %}"></script>
+    <script src="{% static "vaccine_data_visual/site_pred2.js" %}"></script>
+</body>
+</html>
