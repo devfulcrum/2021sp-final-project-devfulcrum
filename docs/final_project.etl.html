@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>final_project.etl package &mdash; 2021sp CSCI-E-20 Final Project - Covid and Vaccine Data Visualization 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 2021sp CSCI-E-20 Final Project - Covid and Vaccine Data Visualization
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">final_project.etl package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-final_project.etl.covid_data_confirmed_time_series_global">final_project.etl.covid_data_confirmed_time_series_global module</a></li>
+<li><a class="reference internal" href="#module-final_project.etl.covid_data_confirmed_time_series_us">final_project.etl.covid_data_confirmed_time_series_us module</a></li>
+<li><a class="reference internal" href="#module-final_project.etl.covid_data_deaths_time_series_global">final_project.etl.covid_data_deaths_time_series_global module</a></li>
+<li><a class="reference internal" href="#module-final_project.etl.covid_data_deaths_time_series_us">final_project.etl.covid_data_deaths_time_series_us module</a></li>
+<li><a class="reference internal" href="#module-final_project.etl.covid_data_recovered_time_series_global">final_project.etl.covid_data_recovered_time_series_global module</a></li>
+<li><a class="reference internal" href="#module-final_project.etl.covid_testing_data_time_series_us">final_project.etl.covid_testing_data_time_series_us module</a></li>
+<li><a class="reference internal" href="#final-project-etl-tasks-covid-data-module">final_project.etl.tasks_covid_data module</a></li>
+<li><a class="reference internal" href="#final-project-etl-tasks-vaccine-data-module">final_project.etl.tasks_vaccine_data module</a></li>
+<li><a class="reference internal" href="#module-final_project.etl.vaccine_data_global">final_project.etl.vaccine_data_global module</a></li>
+<li><a class="reference internal" href="#module-final_project.etl.vaccine_data_time_series_global">final_project.etl.vaccine_data_time_series_global module</a></li>
+<li><a class="reference internal" href="#module-final_project.etl">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">2021sp CSCI-E-20 Final Project - Covid and Vaccine Data Visualization</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>final_project.etl package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/final_project.etl.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="final-project-etl-package">
+<h1>final_project.etl package<a class="headerlink" href="#final-project-etl-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-final_project.etl.covid_data_confirmed_time_series_global">
+<span id="final-project-etl-covid-data-confirmed-time-series-global-module"></span><h2>final_project.etl.covid_data_confirmed_time_series_global module<a class="headerlink" href="#module-final_project.etl.covid_data_confirmed_time_series_global" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">final_project.etl.covid_data_confirmed_time_series_global.</span></code><code class="sig-name descname"><span class="pre">CovidDataConfirmedTimeSeriesGlobal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data confirmed cases time series
+information download for Global</p>
+<dl class="py attribute">
+<dt id="final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.etl_url">
+<code class="sig-name descname"><span class="pre">etl_url</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.output">
+<code class="sig-name descname"><span class="pre">output</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_confirmed_global.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.run">
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.covid_data_confirmed_time_series_us">
+<span id="final-project-etl-covid-data-confirmed-time-series-us-module"></span><h2>final_project.etl.covid_data_confirmed_time_series_us module<a class="headerlink" href="#module-final_project.etl.covid_data_confirmed_time_series_us" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">final_project.etl.covid_data_confirmed_time_series_us.</span></code><code class="sig-name descname"><span class="pre">CovidDataConfirmedTimeSeriesUS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data confirmed cases time series
+information download for US</p>
+<dl class="py attribute">
+<dt id="final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.etl_url">
+<code class="sig-name descname"><span class="pre">etl_url</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.output">
+<code class="sig-name descname"><span class="pre">output</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_confirmed_US.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.run">
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.covid_data_deaths_time_series_global">
+<span id="final-project-etl-covid-data-deaths-time-series-global-module"></span><h2>final_project.etl.covid_data_deaths_time_series_global module<a class="headerlink" href="#module-final_project.etl.covid_data_deaths_time_series_global" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">final_project.etl.covid_data_deaths_time_series_global.</span></code><code class="sig-name descname"><span class="pre">CovidDataDeathsTimeSeriesGlobal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data confirmed deaths time series
+information download for Global</p>
+<dl class="py attribute">
+<dt id="final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.etl_url">
+<code class="sig-name descname"><span class="pre">etl_url</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.output">
+<code class="sig-name descname"><span class="pre">output</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_deaths_global.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.run">
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.covid_data_deaths_time_series_us">
+<span id="final-project-etl-covid-data-deaths-time-series-us-module"></span><h2>final_project.etl.covid_data_deaths_time_series_us module<a class="headerlink" href="#module-final_project.etl.covid_data_deaths_time_series_us" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">final_project.etl.covid_data_deaths_time_series_us.</span></code><code class="sig-name descname"><span class="pre">CovidDataDeathsTimeSeriesUS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data confirmed deaths time series
+information download for US</p>
+<dl class="py attribute">
+<dt id="final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.etl_url">
+<code class="sig-name descname"><span class="pre">etl_url</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.output">
+<code class="sig-name descname"><span class="pre">output</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_deaths_US.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.run">
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.covid_data_recovered_time_series_global">
+<span id="final-project-etl-covid-data-recovered-time-series-global-module"></span><h2>final_project.etl.covid_data_recovered_time_series_global module<a class="headerlink" href="#module-final_project.etl.covid_data_recovered_time_series_global" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">final_project.etl.covid_data_recovered_time_series_global.</span></code><code class="sig-name descname"><span class="pre">CovidDataRecoveredTimeSeriesGlobal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data recovered cases time series
+information download for Global</p>
+<dl class="py attribute">
+<dt id="final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.etl_url">
+<code class="sig-name descname"><span class="pre">etl_url</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.output">
+<code class="sig-name descname"><span class="pre">output</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_recovered_global.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.run">
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.covid_testing_data_time_series_us">
+<span id="final-project-etl-covid-testing-data-time-series-us-module"></span><h2>final_project.etl.covid_testing_data_time_series_us module<a class="headerlink" href="#module-final_project.etl.covid_testing_data_time_series_us" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="final_project.etl.covid_testing_data_time_series_us.CovidTestingData">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">final_project.etl.covid_testing_data_time_series_us.</span></code><code class="sig-name descname"><span class="pre">CovidTestingData</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_testing_data_time_series_us.CovidTestingData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data recovered cases time series
+information download for US</p>
+<dl class="py attribute">
+<dt id="final_project.etl.covid_testing_data_time_series_us.CovidTestingData.etl_url">
+<code class="sig-name descname"><span class="pre">etl_url</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_testing_data_time_series_us.CovidTestingData.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_testing_data_time_series_us.CovidTestingData.output">
+<code class="sig-name descname"><span class="pre">output</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_testing_data_time_series_us.CovidTestingData.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_US.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.covid_testing_data_time_series_us.CovidTestingData.run">
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_testing_data_time_series_us.CovidTestingData.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="final-project-etl-tasks-covid-data-module">
+<h2>final_project.etl.tasks_covid_data module<a class="headerlink" href="#final-project-etl-tasks-covid-data-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="final-project-etl-tasks-vaccine-data-module">
+<h2>final_project.etl.tasks_vaccine_data module<a class="headerlink" href="#final-project-etl-tasks-vaccine-data-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-final_project.etl.vaccine_data_global">
+<span id="final-project-etl-vaccine-data-global-module"></span><h2>final_project.etl.vaccine_data_global module<a class="headerlink" href="#module-final_project.etl.vaccine_data_global" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="final_project.etl.vaccine_data_global.VaccineDataGlobal">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">final_project.etl.vaccine_data_global.</span></code><code class="sig-name descname"><span class="pre">VaccineDataGlobal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_global.VaccineDataGlobal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Vaccine data time series
+information download for Global</p>
+<dl class="py attribute">
+<dt id="final_project.etl.vaccine_data_global.VaccineDataGlobal.etl_url">
+<code class="sig-name descname"><span class="pre">etl_url</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.vaccine_data_global.VaccineDataGlobal.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.vaccine_data_global.VaccineDataGlobal.output">
+<code class="sig-name descname"><span class="pre">output</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_global.VaccineDataGlobal.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for vaccine_data_global.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.vaccine_data_global.VaccineDataGlobal.run">
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_global.VaccineDataGlobal.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.vaccine_data_time_series_global">
+<span id="final-project-etl-vaccine-data-time-series-global-module"></span><h2>final_project.etl.vaccine_data_time_series_global module<a class="headerlink" href="#module-final_project.etl.vaccine_data_time_series_global" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">final_project.etl.vaccine_data_time_series_global.</span></code><code class="sig-name descname"><span class="pre">VaccineDataTimeSeriesGlobal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Vaccine data time series
+information download for US</p>
+<dl class="py attribute">
+<dt id="final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.etl_url">
+<code class="sig-name descname"><span class="pre">etl_url</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.output">
+<code class="sig-name descname"><span class="pre">output</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_vaccine_global.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.run">
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-final_project.etl" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Muthu Venkataraman.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

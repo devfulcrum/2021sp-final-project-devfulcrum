@@ -1,0 +1,21 @@
+final\_project.visual package
+=============================
+
+Submodules
+----------
+
+final\_project.visual.vaccine\_data\_global\_visual1 module
+-----------------------------------------------------------
+
+.. automodule:: final_project.visual.vaccine_data_global_visual1
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: final_project.visual
+   :members:
+   :undoc-members:
+   :show-inheritance:
