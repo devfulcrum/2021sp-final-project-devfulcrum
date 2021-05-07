@@ -68,6 +68,14 @@ final\_project.etl.tasks\_vaccine\_data module
    :undoc-members:
    :show-inheritance:
 
+final\_project.etl.test\_etl module
+-----------------------------------
+
+.. automodule:: final_project.etl.test_etl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 final\_project.etl.vaccine\_data\_global module
 -----------------------------------------------
 
