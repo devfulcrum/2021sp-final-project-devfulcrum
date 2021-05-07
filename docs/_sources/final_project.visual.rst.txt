@@ -4,10 +4,10 @@ final\_project.visual package
 Submodules
 ----------
 
-final\_project.visual.vaccine\_data\_global\_visual1 module
------------------------------------------------------------
+final\_project.visual.linear\_regression module
+-----------------------------------------------
 
-.. automodule:: final_project.visual.vaccine_data_global_visual1
+.. automodule:: final_project.visual.linear_regression
    :members:
    :undoc-members:
    :show-inheritance:
