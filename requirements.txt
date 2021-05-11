@@ -1,3 +1,27 @@
 django
 djangorestframework
 setuptools_scm
+numpy
+luigi
+csci-utils = {git = "https://github.com/csci-e-29/2021sp-csci-utils-devfulcrum"}
+pandas
+environs
+pyarrow
+openpyxl
+gitpython
+seaborn
+datashader
+requests
+aiohttp
+scikit-learn
+sphinx
+sphinx-rtd-theme
+travis-sphinx
+django-environ
+django-model-utils
+argon2-cffi
+django-allauth
+django-crispy-forms
+django-extensions
+coreapi
+coreapi-cli
