@@ -10,6 +10,15 @@ Welcome to CSCI-E-29 Final Project - COVID19 and Vaccine data visualization's do
    :maxdepth: 2
    :caption: Contents:
 
+   introduction/index.rst
+   updates/index.rst
+   process/index.rst
+   visual/index.rst
+   model/index.rst
+   learning/index.rst
+   future/index.rst
+
+   modules
 
 
 Indices and tables
