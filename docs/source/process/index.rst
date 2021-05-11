@@ -48,7 +48,9 @@ visualization and models execution
             .to_frame()
         )
 
-The data files require aggregation and transformation
+The data files require aggregation and transformation.  The confirmed covid cases daily information
+is actually distributed across columns and requires a full pivot transformation aka melt of the numerical
+data and store them by country and by day.  The below snippet of code helps accomplish the same.
 
 .. code-block::
 
@@ -60,7 +62,8 @@ The data files require aggregation and transformation
         melt_df.groupby(["Country/Region", "Date"]).sum()
 
 
-Load the data to the database for visualization
+Load the data to the database for visualization, below snippet of code runs via scheduled
+job daily and helps with loading the data to covid_data table.
 
 .. code-block::
 
