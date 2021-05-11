@@ -24,3 +24,4 @@ addicted to exploring.  Here are some of the highlights and contributions but no
 - Integrating with popular frameworks including Angular, ChartJS and such
 
 - Provide the solution for open source community use and continue to contribute
+
