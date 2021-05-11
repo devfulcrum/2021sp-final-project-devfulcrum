@@ -19,8 +19,8 @@ import sys
 # sys.path.insert(0, basedir)
 sys.path.append(os.path.abspath('../..'))
 sys.path.append(os.path.abspath('..'))
-sys.path.append(os.path.abspath('../../django_covid_vaccine/django_covid_vaccine'))
-sys.path.append(os.path.abspath('../../django_covid_vaccine/vaccine_data_visual'))
+# sys.path.append(os.path.abspath('../../django_covid_vaccine'))
+# sys.path.append(os.path.abspath('../../vaccine_data_visual'))
 
 
 # -- Project information -----------------------------------------------------

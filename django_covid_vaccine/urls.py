@@ -15,15 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from covid_data_visual.views import welcome, date, about
 from vaccine_data_visual import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', welcome),
-    path('date', date),
-    path('about', about),
     path(r'vaccine_data_visual/', include('vaccine_data_visual.urls')),
     path('covid-data-chart/', views.covid_data_chart, name='covid-data-chart'),
     path('vaccine-data-chart/', views.vaccine_data_chart, name='vaccine-data-chart'),
