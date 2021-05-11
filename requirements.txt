@@ -3,7 +3,7 @@ djangorestframework
 setuptools_scm
 numpy
 luigi
-csci-utils = {git = "https://github.com/csci-e-29/2021sp-csci-utils-devfulcrum"}
+git+ssh://git@github.com/csci-e-29/2021sp-csci-utils-devfulcrum#egg=csci_utils
 pandas
 environs
 pyarrow
