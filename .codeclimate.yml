@@ -72,3 +72,4 @@ plugins:
         threshold: 75
 exclude_patterns:
 - "test_pset.py"
+- "docs/*"
