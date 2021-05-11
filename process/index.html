@@ -208,7 +208,9 @@ visualization and models execution</p>
     <span class="p">)</span>
 </pre></div>
 </div>
-<p>The data files require aggregation and transformation</p>
+<p>The data files require aggregation and transformation.  The confirmed covid cases daily information
+is actually distributed across columns and requires a full pivot transformation aka melt of the numerical
+data and store them by country and by day.  The below snippet of code helps accomplish the same.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">melt_df</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="n">idx</span><span class="p">,</span> <span class="n">value_vars</span><span class="o">=</span><span class="n">number_columns</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
@@ -217,7 +219,8 @@ visualization and models execution</p>
 <span class="n">melt_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Country/Region&quot;</span><span class="p">,</span> <span class="s2">&quot;Date&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Load the data to the database for visualization</p>
+<p>Load the data to the database for visualization, below snippet of code runs via scheduled
+job daily and helps with loading the data to covid_data table.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">transaction</span><span class="o">.</span><span class="n">atomic</span><span class="p">():</span>
     <span class="n">covid_data</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">CovidData</span><span class="p">(</span>

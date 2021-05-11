@@ -14,10 +14,12 @@ Load CSV data from Johns Hopkins GitHub repository that is publicly accessible, 
 for visualization in aggregated files or database. Finally develop data visualization for common understanding
 of both the virus spread and the vaccines usage.
 
+
 Project Architecture
 =================================
 
 .. image:: proj_arch.png
+
 
 Project Approach
 =================================
@@ -34,9 +36,10 @@ Project Approach
 
 - Stream processing, visualization and linear regression models execution
 
-- The following packages are leveraged
+- The following packages are leveraged through the project
     - pandas, environs, pyarrow, openpyxl, gitpython, luigi, django, seaborn, datashader, requests
     - aiohttp, djangorestframework, scikit-learn, numpy, coreapi, coreapi-cli
+
 
 Benefits
 =================================
