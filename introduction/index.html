@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Introduction &mdash; 2021sp CSCI-E-20 Final Project - Covid and Vaccine Data Visualization 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Updates" href="../updates/index.html" />
+    <link rel="prev" title="Welcome to CSCI-E-29 Final Project - COVID19 and Vaccine data visualization’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 2021sp CSCI-E-20 Final Project - Covid and Vaccine Data Visualization
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-architecture">Project Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-approach">Project Approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#benefits">Benefits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../updates/index.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process/index.html">Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visual/index.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/index.html">Regression Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/index.html">Continuous Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../future/index.html">Future State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">final_project</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">2021sp CSCI-E-20 Final Project - Covid and Vaccine Data Visualization</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/introduction/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>Ever since the COVID-19 pandemic erupted and disrupted our way of life, Johns Hopkins University had been
+gathering data and publishing them for general consumption and use.  My goal is to utilize the datasets
+published by the University for my final project assignment.</p>
+<p>Load CSV data from Johns Hopkins GitHub repository that is publicly accessible, process the data and persist
+for visualization in aggregated files or database. Finally develop data visualization for common understanding
+of both the virus spread and the vaccines usage.</p>
+</div>
+<div class="section" id="project-architecture">
+<h2>Project Architecture<a class="headerlink" href="#project-architecture" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/proj_arch.png" src="../_images/proj_arch.png" />
+</div>
+<div class="section" id="project-approach">
+<h2>Project Approach<a class="headerlink" href="#project-approach" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Load CSV Data from GitHub, look for new files -&gt; Stream Processing</p></li>
+<li><p>Process and load updates for both COVID-19 Cases and Administering of Vaccines</p></li>
+<li><p>Leverage atomic writes, Relation DB for Persistent Storage</p></li>
+<li><p>Aggregate for Data visualization and build interactive charts</p></li>
+<li><p>Identified and leveraging several packages</p></li>
+<li><p>Stream processing, visualization and linear regression models execution</p></li>
+<li><dl class="simple">
+<dt>The following packages are leveraged</dt><dd><ul>
+<li><p>pandas, environs, pyarrow, openpyxl, gitpython, luigi, django, seaborn, datashader, requests</p></li>
+<li><p>aiohttp, djangorestframework, scikit-learn, numpy, coreapi, coreapi-cli</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="benefits">
+<h2>Benefits<a class="headerlink" href="#benefits" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Ability to work with live data stream, data is updated daily and hourly in some cases.</p></li>
+<li><p>Use of advanced python packages and demonstrate extended Advanced Python learnings from this semester.</p></li>
+<li><p>Deliver visualization solution to OSS (vaccine vs cases).</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../updates/index.html" class="btn btn-neutral float-right" title="Updates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to CSCI-E-29 Final Project - COVID19 and Vaccine data visualization’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Muthu Venkataraman.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

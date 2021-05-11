@@ -1,0 +1,1314 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>final_project.etl package &mdash; 2021sp CSCI-E-20 Final Project - Covid and Vaccine Data Visualization 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="final_project.visual package" href="final_project.visual.html" />
+    <link rel="prev" title="final_project package" href="final_project.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 2021sp CSCI-E-20 Final Project - Covid and Vaccine Data Visualization
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates/index.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process/index.html">Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visual/index.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model/index.html">Regression Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning/index.html">Continuous Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="future/index.html">Future State</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">final_project</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="final_project.html">final_project package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="final_project.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">final_project.etl package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="final_project.visual.html">final_project.visual package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="final_project.html#module-final_project">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">2021sp CSCI-E-20 Final Project - Covid and Vaccine Data Visualization</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">final_project</a> &raquo;</li>
+        
+          <li><a href="final_project.html">final_project package</a> &raquo;</li>
+        
+      <li>final_project.etl package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/final_project.etl.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="final-project-etl-package">
+<h1>final_project.etl package<a class="headerlink" href="#final-project-etl-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-final_project.etl.covid_data_confirmed_time_series_global">
+<span id="final-project-etl-covid-data-confirmed-time-series-global-module"></span><h2>final_project.etl.covid_data_confirmed_time_series_global module<a class="headerlink" href="#module-final_project.etl.covid_data_confirmed_time_series_global" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.covid_data_confirmed_time_series_global.</span></span><span class="sig-name descname"><span class="pre">CovidDataConfirmedTimeSeriesGlobal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data confirmed cases time series
+information download for Global</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.etl_url">
+<span class="sig-name descname"><span class="pre">etl_url</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_confirmed_global.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_global.CovidDataConfirmedTimeSeriesGlobal.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.covid_data_confirmed_time_series_us">
+<span id="final-project-etl-covid-data-confirmed-time-series-us-module"></span><h2>final_project.etl.covid_data_confirmed_time_series_us module<a class="headerlink" href="#module-final_project.etl.covid_data_confirmed_time_series_us" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.covid_data_confirmed_time_series_us.</span></span><span class="sig-name descname"><span class="pre">CovidDataConfirmedTimeSeriesUS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data confirmed cases time series
+information download for US</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.etl_url">
+<span class="sig-name descname"><span class="pre">etl_url</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_confirmed_US.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_confirmed_time_series_us.CovidDataConfirmedTimeSeriesUS.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.covid_data_deaths_time_series_global">
+<span id="final-project-etl-covid-data-deaths-time-series-global-module"></span><h2>final_project.etl.covid_data_deaths_time_series_global module<a class="headerlink" href="#module-final_project.etl.covid_data_deaths_time_series_global" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.covid_data_deaths_time_series_global.</span></span><span class="sig-name descname"><span class="pre">CovidDataDeathsTimeSeriesGlobal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data confirmed deaths time series
+information download for Global</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.etl_url">
+<span class="sig-name descname"><span class="pre">etl_url</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_deaths_global.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_global.CovidDataDeathsTimeSeriesGlobal.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.covid_data_deaths_time_series_us">
+<span id="final-project-etl-covid-data-deaths-time-series-us-module"></span><h2>final_project.etl.covid_data_deaths_time_series_us module<a class="headerlink" href="#module-final_project.etl.covid_data_deaths_time_series_us" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.covid_data_deaths_time_series_us.</span></span><span class="sig-name descname"><span class="pre">CovidDataDeathsTimeSeriesUS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data confirmed deaths time series
+information download for US</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.etl_url">
+<span class="sig-name descname"><span class="pre">etl_url</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_deaths_US.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_deaths_time_series_us.CovidDataDeathsTimeSeriesUS.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.covid_data_recovered_time_series_global">
+<span id="final-project-etl-covid-data-recovered-time-series-global-module"></span><h2>final_project.etl.covid_data_recovered_time_series_global module<a class="headerlink" href="#module-final_project.etl.covid_data_recovered_time_series_global" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.covid_data_recovered_time_series_global.</span></span><span class="sig-name descname"><span class="pre">CovidDataRecoveredTimeSeriesGlobal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data recovered cases time series
+information download for Global</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.etl_url">
+<span class="sig-name descname"><span class="pre">etl_url</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_recovered_global.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_data_recovered_time_series_global.CovidDataRecoveredTimeSeriesGlobal.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.covid_testing_data_time_series_us">
+<span id="final-project-etl-covid-testing-data-time-series-us-module"></span><h2>final_project.etl.covid_testing_data_time_series_us module<a class="headerlink" href="#module-final_project.etl.covid_testing_data_time_series_us" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.covid_testing_data_time_series_us.CovidTestingData">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.covid_testing_data_time_series_us.</span></span><span class="sig-name descname"><span class="pre">CovidTestingData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_testing_data_time_series_us.CovidTestingData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Covid data recovered cases time series
+information download for US</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.covid_testing_data_time_series_us.CovidTestingData.etl_url">
+<span class="sig-name descname"><span class="pre">etl_url</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.covid_testing_data_time_series_us.CovidTestingData.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_testing_data_time_series_us.CovidTestingData.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_testing_data_time_series_us.CovidTestingData.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_US.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.covid_testing_data_time_series_us.CovidTestingData.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.covid_testing_data_time_series_us.CovidTestingData.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.tasks_covid_data">
+<span id="final-project-etl-tasks-covid-data-module"></span><h2>final_project.etl.tasks_covid_data module<a class="headerlink" href="#module-final_project.etl.tasks_covid_data" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ByCountryCovid">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_covid_data.</span></span><span class="sig-name descname"><span class="pre">ByCountryCovid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ByCountryCovid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#final_project.etl.tasks_covid_data.ETLAnalysisPrint" title="final_project.etl.tasks_covid_data.ETLAnalysisPrint"><code class="xref py py-class docutils literal notranslate"><span class="pre">final_project.etl.tasks_covid_data.ETLAnalysisPrint</span></code></a></p>
+<p>this class defines the requirement - ByCountryAnalysis and does the results print.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ByCountryCovid.input_data">
+<span class="sig-name descname"><span class="pre">input_data</span></span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ByCountryCovid.input_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requirement descriptor.  It is to be used together with
+the Requires descriptor class to construct Luigi Task requires.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ByCountryCovidAnalysis">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_covid_data.</span></span><span class="sig-name descname"><span class="pre">ByCountryCovidAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ByCountryCovidAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#final_project.etl.tasks_covid_data.ETLAnalysis" title="final_project.etl.tasks_covid_data.ETLAnalysis"><code class="xref py py-class docutils literal notranslate"><span class="pre">final_project.etl.tasks_covid_data.ETLAnalysis</span></code></a></p>
+<p>This class extends ETLAnalysis and implements perform_analysis method.  Calculates the
+sum of confirmed cases for covid data by country and returns the dataframe.
+This class also sets the sub directory for storing the parquet file under by_country folder.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ByCountryCovidAnalysis.perform_analysis">
+<span class="sig-name descname"><span class="pre">perform_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">analysis_dataframe</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ByCountryCovidAnalysis.perform_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs actual computation of confirmed cases by country.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>analysis_dataframe</strong> – Covid data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dataframe that contains the calculated results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ByCountryCovidAnalysis.sub_dir">
+<span class="sig-name descname"><span class="pre">sub_dir</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_covid_data.ByCountryCovidAnalysis.sub_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ByCountryMonthCovid">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_covid_data.</span></span><span class="sig-name descname"><span class="pre">ByCountryMonthCovid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ByCountryMonthCovid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#final_project.etl.tasks_covid_data.ETLAnalysisPrint" title="final_project.etl.tasks_covid_data.ETLAnalysisPrint"><code class="xref py py-class docutils literal notranslate"><span class="pre">final_project.etl.tasks_covid_data.ETLAnalysisPrint</span></code></a></p>
+<p>this class defines the requirement - ByCountryMonthAnalysis and does the results print.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ByCountryMonthCovid.input_data">
+<span class="sig-name descname"><span class="pre">input_data</span></span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ByCountryMonthCovid.input_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requirement descriptor.  It is to be used together with
+the Requires descriptor class to construct Luigi Task requires.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ByCountryMonthCovidAnalysis">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_covid_data.</span></span><span class="sig-name descname"><span class="pre">ByCountryMonthCovidAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ByCountryMonthCovidAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#final_project.etl.tasks_covid_data.ETLAnalysis" title="final_project.etl.tasks_covid_data.ETLAnalysis"><code class="xref py py-class docutils literal notranslate"><span class="pre">final_project.etl.tasks_covid_data.ETLAnalysis</span></code></a></p>
+<p>This class extends ETLAnalysis and implements perform_analysis method.  Calculates the
+sum of confirmed cases for covid data by country, month and returns the dataframe.
+This class also sets the sub directory for storing the parquet file under by_country_month folder.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ByCountryMonthCovidAnalysis.perform_analysis">
+<span class="sig-name descname"><span class="pre">perform_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">analysis_dataframe</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ByCountryMonthCovidAnalysis.perform_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs actual computation of confirmed cases by country and month.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>analysis_dataframe</strong> – Covid data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dataframe that contains the calculated results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ByCountryMonthCovidAnalysis.sub_dir">
+<span class="sig-name descname"><span class="pre">sub_dir</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_covid_data.ByCountryMonthCovidAnalysis.sub_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_covid_data.</span></span><span class="sig-name descname"><span class="pre">CovidDataGlobalCleanupTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>Luigi Task to clean Covid time series data. The input is from
+External Task that specifies files in GIT. The cleaning from below code handles
+removing rows with null date and confirmed cases values are non-zero.
+The default parameters can be overridden for testing and I have overridden for
+all test cases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subset</strong> – bool, True to process one partition, False to process the entire dataset
+default: True</p></li>
+<li><p><strong>data_root</strong> – str, base directory to store cleaned output files</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Output:</dt><dd><p>Dataframe stored in compressed Parquet format</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.data_root">
+<span class="sig-name descname"><span class="pre">data_root</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.data_root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.input_data">
+<span class="sig-name descname"><span class="pre">input_data</span></span><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.input_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requirement descriptor.  It is to be used together with
+the Requires descriptor class to construct Luigi Task requires.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.output">
+<span class="sig-name descname"><span class="pre">output</span></span><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task output descriptor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.requires">
+<span class="sig-name descname"><span class="pre">requires</span></span><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.requires" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requires descriptor.  It is to be used together with
+the Requirement descriptor class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean Covid data from Task input and stores dataframe in Parquet format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.subset">
+<span class="sig-name descname"><span class="pre">subset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.BoolParameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalCleanupTask.subset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalTask">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_covid_data.</span></span><span class="sig-name descname"><span class="pre">CovidDataGlobalTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.ExternalTask</span></code></p>
+<p>Luigi ExternalTask to work with GIT CSVTarget. All three default variables
+(git_root, git_glob and git_ext) can be overridden.  The default values are used
+for working with a specific GIT download.  I have overridden them for test cases to work with
+local mock data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>git_root</strong> – str, git root directory path</p></li>
+<li><p><strong>git_glob</strong> – str, glob of data file names</p></li>
+<li><p><strong>git_ext</strong> – str, extension will be added to the glob</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Outputs:</dt><dd><p>Returns a CSVTarget instance</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalTask.git_ext">
+<span class="sig-name descname"><span class="pre">git_ext</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalTask.git_ext" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalTask.git_glob">
+<span class="sig-name descname"><span class="pre">git_glob</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalTask.git_glob" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalTask.git_root">
+<span class="sig-name descname"><span class="pre">git_root</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalTask.git_root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.CovidDataGlobalTask.output">
+<span class="sig-name descname"><span class="pre">output</span></span><a class="headerlink" href="#final_project.etl.tasks_covid_data.CovidDataGlobalTask.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task output descriptor.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysis">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_covid_data.</span></span><span class="sig-name descname"><span class="pre">ETLAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>Created an abstract class for conducting analysis of covid data
+at different levels - by country, by year, by month and by week.  This is a luigi
+task and sub-classed by the different levels of covid data analysis tasks.  The analysis
+abstract class requires Cleanup and the parquet files for performing
+the analysis and display.</p>
+<p>This abstract class has one analysis method to override / implement in their
+respective tasks.</p>
+<p>Each analysis should be a separate Luigi task, which computes its analysis and writes
+the result to parquet. To display to the terminal or answer a quiz, the output should
+be read back from the written parquet file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subset</strong> – bool, True to process just one partition, False to process
+the entire dataset, default: True</p></li>
+<li><p><strong>analysis_path</strong> – str, base directory to store output files</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Output:</dt><dd><dl class="simple">
+<dt>Dataframe stored in compressed Parquet format in</dt><dd><p>{task.analysis_path}/{task.sub_dir}/subset-{task.subset}/</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysis.analysis_path">
+<span class="sig-name descname"><span class="pre">analysis_path</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysis.analysis_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysis.input_data">
+<span class="sig-name descname"><span class="pre">input_data</span></span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysis.input_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requirement descriptor.  It is to be used together with
+the Requires descriptor class to construct Luigi Task requires.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysis.output">
+<span class="sig-name descname"><span class="pre">output</span></span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysis.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task output descriptor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysis.perform_analysis">
+<span class="sig-name descname"><span class="pre">perform_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysis.perform_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>this method will be implemented by sub-classes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysis.requires">
+<span class="sig-name descname"><span class="pre">requires</span></span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysis.requires" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requires descriptor.  It is to be used together with
+the Requirement descriptor class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysis.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysis.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses the data points we need for analysis -&gt; Country_Region and Date
+calls the implemented perform_analysis method to do the calculations</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysis.subset">
+<span class="sig-name descname"><span class="pre">subset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.BoolParameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysis.subset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysisPrint">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_covid_data.</span></span><span class="sig-name descname"><span class="pre">ETLAnalysisPrint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysisPrint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>ETL analysis class to read_dask, compute and print.  This is implemented by the
+different analysis tasks to just do that.  Last bit of work for each task to do the
+computation and print.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subset</strong> – bool, used to subset true or false, default: True</p></li>
+<li><p><strong>analysis_path</strong> – str, final results are stored as parquet files here</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Output:</dt><dd><p>print the analysis dataframe for visual</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysisPrint.analysis_path">
+<span class="sig-name descname"><span class="pre">analysis_path</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysisPrint.analysis_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysisPrint.complete">
+<span class="sig-name descname"><span class="pre">complete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysisPrint.complete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does really nothing and returns false.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysisPrint.requires">
+<span class="sig-name descname"><span class="pre">requires</span></span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysisPrint.requires" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requires descriptor.  It is to be used together with
+the Requirement descriptor class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysisPrint.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysisPrint.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the dask, compute and print.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_covid_data.ETLAnalysisPrint.subset">
+<span class="sig-name descname"><span class="pre">subset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.BoolParameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_covid_data.ETLAnalysisPrint.subset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.tasks_vaccine_data">
+<span id="final-project-etl-tasks-vaccine-data-module"></span><h2>final_project.etl.tasks_vaccine_data module<a class="headerlink" href="#module-final_project.etl.tasks_vaccine_data" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ByCountryMonthVaccine">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_vaccine_data.</span></span><span class="sig-name descname"><span class="pre">ByCountryMonthVaccine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ByCountryMonthVaccine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#final_project.etl.tasks_vaccine_data.ETLAnalysisPrint" title="final_project.etl.tasks_vaccine_data.ETLAnalysisPrint"><code class="xref py py-class docutils literal notranslate"><span class="pre">final_project.etl.tasks_vaccine_data.ETLAnalysisPrint</span></code></a></p>
+<p>this class defines the requirement - ByCountryMonthAnalysis and does the results print.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ByCountryMonthVaccine.input_data">
+<span class="sig-name descname"><span class="pre">input_data</span></span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ByCountryMonthVaccine.input_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requirement descriptor.  It is to be used together with
+the Requires descriptor class to construct Luigi Task requires.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ByCountryMonthVaccineAnalysis">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_vaccine_data.</span></span><span class="sig-name descname"><span class="pre">ByCountryMonthVaccineAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ByCountryMonthVaccineAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#final_project.etl.tasks_vaccine_data.ETLAnalysis" title="final_project.etl.tasks_vaccine_data.ETLAnalysis"><code class="xref py py-class docutils literal notranslate"><span class="pre">final_project.etl.tasks_vaccine_data.ETLAnalysis</span></code></a></p>
+<p>This class extends ETLAnalysis and implements perform_analysis method.  Calculates the
+sum of doses administered for vaccine data by country, month and returns the dataframe.
+This class also sets the sub directory for storing the parquet file under by_country_month folder.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ByCountryMonthVaccineAnalysis.perform_analysis">
+<span class="sig-name descname"><span class="pre">perform_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">analysis_dataframe</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ByCountryMonthVaccineAnalysis.perform_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs actual computation of confirmed cases by country and month.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>analysis_dataframe</strong> – Vaccine data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dataframe that contains the calculated results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ByCountryMonthVaccineAnalysis.sub_dir">
+<span class="sig-name descname"><span class="pre">sub_dir</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ByCountryMonthVaccineAnalysis.sub_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ByCountryVaccine">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_vaccine_data.</span></span><span class="sig-name descname"><span class="pre">ByCountryVaccine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ByCountryVaccine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#final_project.etl.tasks_vaccine_data.ETLAnalysisPrint" title="final_project.etl.tasks_vaccine_data.ETLAnalysisPrint"><code class="xref py py-class docutils literal notranslate"><span class="pre">final_project.etl.tasks_vaccine_data.ETLAnalysisPrint</span></code></a></p>
+<p>this class defines the requirement - ByCountryAnalysis and does the results print.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ByCountryVaccine.input_data">
+<span class="sig-name descname"><span class="pre">input_data</span></span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ByCountryVaccine.input_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requirement descriptor.  It is to be used together with
+the Requires descriptor class to construct Luigi Task requires.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ByCountryVaccineAnalysis">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_vaccine_data.</span></span><span class="sig-name descname"><span class="pre">ByCountryVaccineAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ByCountryVaccineAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#final_project.etl.tasks_vaccine_data.ETLAnalysis" title="final_project.etl.tasks_vaccine_data.ETLAnalysis"><code class="xref py py-class docutils literal notranslate"><span class="pre">final_project.etl.tasks_vaccine_data.ETLAnalysis</span></code></a></p>
+<p>This class extends ETLAnalysis and implements perform_analysis method.  Calculates the
+sum of doses administered for vaccine data by country and returns the dataframe.
+This class also sets the sub directory for storing the parquet file under by_country folder.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ByCountryVaccineAnalysis.perform_analysis">
+<span class="sig-name descname"><span class="pre">perform_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">analysis_dataframe</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ByCountryVaccineAnalysis.perform_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs actual computation of confirmed cases by country.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>analysis_dataframe</strong> – Vaccine data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dataframe that contains the calculated results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ByCountryVaccineAnalysis.sub_dir">
+<span class="sig-name descname"><span class="pre">sub_dir</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ByCountryVaccineAnalysis.sub_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysis">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_vaccine_data.</span></span><span class="sig-name descname"><span class="pre">ETLAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>Created an abstract class for conducting analysis of vaccine data
+at different levels - by country, by year, by month and by week.  This is a luigi
+task and sub-classed by the different levels of covid data analysis tasks.  The analysis
+abstract class requires Cleanup and the parquet files for performing
+the analysis and display.</p>
+<p>This abstract class has one analysis method to override / implement in their
+respective tasks.</p>
+<p>Each analysis should be a separate Luigi task, which computes its analysis and writes
+the result to parquet. To display to the terminal or answer a quiz, the output should
+be read back from the written parquet file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subset</strong> – bool, True to process just one partition, False to process
+the entire dataset, default: True</p></li>
+<li><p><strong>analysis_path</strong> – str, base directory to store output files</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Output:</dt><dd><dl class="simple">
+<dt>Dataframe stored in compressed Parquet format in</dt><dd><p>{task.analysis_path}/{task.sub_dir}/subset-{task.subset}/</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysis.analysis_path">
+<span class="sig-name descname"><span class="pre">analysis_path</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysis.analysis_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysis.input_data">
+<span class="sig-name descname"><span class="pre">input_data</span></span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysis.input_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requirement descriptor.  It is to be used together with
+the Requires descriptor class to construct Luigi Task requires.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysis.output">
+<span class="sig-name descname"><span class="pre">output</span></span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysis.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task output descriptor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysis.perform_analysis">
+<span class="sig-name descname"><span class="pre">perform_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysis.perform_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>this method will be implemented by sub-classes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysis.requires">
+<span class="sig-name descname"><span class="pre">requires</span></span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysis.requires" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requires descriptor.  It is to be used together with
+the Requirement descriptor class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysis.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysis.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses the three data points we need for analysis -&gt; Country_Region and Date
+calls the implemented perform_analysis method to do the calculations</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysis.subset">
+<span class="sig-name descname"><span class="pre">subset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.BoolParameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysis.subset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysisPrint">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_vaccine_data.</span></span><span class="sig-name descname"><span class="pre">ETLAnalysisPrint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysisPrint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>ETL analysis class to read_dask, compute and print.  This is implemented by the
+different analysis tasks to just do that.  Last bit of work for each task to do the
+computation and print.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subset</strong> – bool, used to subset true or false, default: True</p></li>
+<li><p><strong>analysis_path</strong> – str, final results are stored as parquet files here</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Output:</dt><dd><p>print the analysis dataframe for visual</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysisPrint.analysis_path">
+<span class="sig-name descname"><span class="pre">analysis_path</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysisPrint.analysis_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysisPrint.complete">
+<span class="sig-name descname"><span class="pre">complete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysisPrint.complete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does really nothing and returns false.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysisPrint.requires">
+<span class="sig-name descname"><span class="pre">requires</span></span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysisPrint.requires" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requires descriptor.  It is to be used together with
+the Requirement descriptor class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysisPrint.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysisPrint.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the dask, compute and print.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.ETLAnalysisPrint.subset">
+<span class="sig-name descname"><span class="pre">subset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.BoolParameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.ETLAnalysisPrint.subset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_vaccine_data.</span></span><span class="sig-name descname"><span class="pre">VaccineDataGlobalCleanupTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>Luigi Task to clean Vaccine time series data. The input is from
+External Task that specifies files in GIT. The cleaning from below code handles
+removing rows with null date and doses administered values are non-zero.
+The default parameters can be overridden for testing and I have overridden for
+all test cases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subset</strong> – bool, True to process one partition, False to process the entire dataset
+default: True</p></li>
+<li><p><strong>data_root</strong> – str, base directory to store cleaned output files</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Output:</dt><dd><p>Dataframe stored in compressed Parquet format</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.data_root">
+<span class="sig-name descname"><span class="pre">data_root</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.data_root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.input_data">
+<span class="sig-name descname"><span class="pre">input_data</span></span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.input_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requirement descriptor.  It is to be used together with
+the Requires descriptor class to construct Luigi Task requires.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.output">
+<span class="sig-name descname"><span class="pre">output</span></span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task output descriptor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.requires">
+<span class="sig-name descname"><span class="pre">requires</span></span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.requires" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task requires descriptor.  It is to be used together with
+the Requirement descriptor class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean Vaccine data from Task input and stores dataframe in Parquet format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.subset">
+<span class="sig-name descname"><span class="pre">subset</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.BoolParameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalCleanupTask.subset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalTask">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.tasks_vaccine_data.</span></span><span class="sig-name descname"><span class="pre">VaccineDataGlobalTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.ExternalTask</span></code></p>
+<p>Luigi ExternalTask to work with GIT CSVTarget. All three default variables
+(git_root, git_glob and git_ext) can be overridden.  The default values are used
+for working with a specific GIT download.  I have overridden them for test cases to work with
+local mock data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>git_root</strong> – str, git root directory path</p></li>
+<li><p><strong>git_glob</strong> – str, glob of data file names</p></li>
+<li><p><strong>git_ext</strong> – str, extension will be added to the glob</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Outputs:</dt><dd><p>Returns a CSVTarget instance</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalTask.git_ext">
+<span class="sig-name descname"><span class="pre">git_ext</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalTask.git_ext" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalTask.git_glob">
+<span class="sig-name descname"><span class="pre">git_glob</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalTask.git_glob" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalTask.git_root">
+<span class="sig-name descname"><span class="pre">git_root</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalTask.git_root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.tasks_vaccine_data.VaccineDataGlobalTask.output">
+<span class="sig-name descname"><span class="pre">output</span></span><a class="headerlink" href="#final_project.etl.tasks_vaccine_data.VaccineDataGlobalTask.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luigi Task output descriptor.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.test_etl">
+<span id="final-project-etl-test-etl-module"></span><h2>final_project.etl.test_etl module<a class="headerlink" href="#module-final_project.etl.test_etl" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.test_etl.ETLTests">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.test_etl.</span></span><span class="sig-name descname"><span class="pre">ETLTests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.test_etl.ETLTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>This class contains all the tests for ETL activities (Luigi Tasks and Dask)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.test_etl.ETLTests.test_aggregation">
+<span class="sig-name descname"><span class="pre">test_aggregation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.test_etl.ETLTests.test_aggregation" title="Permalink to this definition">¶</a></dt>
+<dd><p>This performs vaccine and covid data aggregation test</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.test_etl.ETLTests.test_covid_data_confirmed_time_series_global">
+<span class="sig-name descname"><span class="pre">test_covid_data_confirmed_time_series_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.test_etl.ETLTests.test_covid_data_confirmed_time_series_global" title="Permalink to this definition">¶</a></dt>
+<dd><p>This performs covid data confirmed time series global test for luigi task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.test_etl.ETLTests.test_covid_data_confirmed_time_series_us">
+<span class="sig-name descname"><span class="pre">test_covid_data_confirmed_time_series_us</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.test_etl.ETLTests.test_covid_data_confirmed_time_series_us" title="Permalink to this definition">¶</a></dt>
+<dd><p>This performs covid data confirmed time series US test for luigi task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.test_etl.ETLTests.test_covid_data_deaths_time_series_global">
+<span class="sig-name descname"><span class="pre">test_covid_data_deaths_time_series_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.test_etl.ETLTests.test_covid_data_deaths_time_series_global" title="Permalink to this definition">¶</a></dt>
+<dd><p>This performs covid data deaths time series global test for luigi task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.test_etl.ETLTests.test_covid_data_deaths_time_series_us">
+<span class="sig-name descname"><span class="pre">test_covid_data_deaths_time_series_us</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.test_etl.ETLTests.test_covid_data_deaths_time_series_us" title="Permalink to this definition">¶</a></dt>
+<dd><p>This performs covid data deaths time series US test for luigi task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.test_etl.ETLTests.test_covid_data_recovered_time_series_global">
+<span class="sig-name descname"><span class="pre">test_covid_data_recovered_time_series_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.test_etl.ETLTests.test_covid_data_recovered_time_series_global" title="Permalink to this definition">¶</a></dt>
+<dd><p>This performs covid data recovered time series global test for luigi task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.test_etl.ETLTests.test_covid_testing_data">
+<span class="sig-name descname"><span class="pre">test_covid_testing_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.test_etl.ETLTests.test_covid_testing_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This performs covid testing data test for luigi task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.test_etl.ETLTests.test_etl">
+<span class="sig-name descname"><span class="pre">test_etl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.test_etl.ETLTests.test_etl" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is just to have a main test that just performs a simple assert</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.test_etl.ETLTests.test_vaccine_data_global">
+<span class="sig-name descname"><span class="pre">test_vaccine_data_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.test_etl.ETLTests.test_vaccine_data_global" title="Permalink to this definition">¶</a></dt>
+<dd><p>This performs vaccine data global test for luigi task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.test_etl.ETLTests.test_vaccine_data_time_series_global">
+<span class="sig-name descname"><span class="pre">test_vaccine_data_time_series_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.test_etl.ETLTests.test_vaccine_data_time_series_global" title="Permalink to this definition">¶</a></dt>
+<dd><p>This performs vaccine data time series test for luigi task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.vaccine_data_global">
+<span id="final-project-etl-vaccine-data-global-module"></span><h2>final_project.etl.vaccine_data_global module<a class="headerlink" href="#module-final_project.etl.vaccine_data_global" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.vaccine_data_global.VaccineDataGlobal">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.vaccine_data_global.</span></span><span class="sig-name descname"><span class="pre">VaccineDataGlobal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_global.VaccineDataGlobal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Vaccine data time series
+information download for Global</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.vaccine_data_global.VaccineDataGlobal.etl_url">
+<span class="sig-name descname"><span class="pre">etl_url</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.vaccine_data_global.VaccineDataGlobal.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.vaccine_data_global.VaccineDataGlobal.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_global.VaccineDataGlobal.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for vaccine_data_global.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.vaccine_data_global.VaccineDataGlobal.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_global.VaccineDataGlobal.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl.vaccine_data_time_series_global">
+<span id="final-project-etl-vaccine-data-time-series-global-module"></span><h2>final_project.etl.vaccine_data_time_series_global module<a class="headerlink" href="#module-final_project.etl.vaccine_data_time_series_global" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">final_project.etl.vaccine_data_time_series_global.</span></span><span class="sig-name descname"><span class="pre">VaccineDataTimeSeriesGlobal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.task.Task</span></code></p>
+<p>This luigi task class is to work with Vaccine data time series
+information download for US</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.etl_url">
+<span class="sig-name descname"><span class="pre">etl_url</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;luigi.parameter.Parameter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.etl_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the Local target for data download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LocalTarget: returns luigi.LocalTarget for time_series_covid19_vaccine_global.csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final_project.etl.vaccine_data_time_series_global.VaccineDataTimeSeriesGlobal.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the etl_url parameters to perform http get request and
+write the response content to the local target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>File content is stored in the data directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-final_project.etl">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-final_project.etl" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="final_project.visual.html" class="btn btn-neutral float-right" title="final_project.visual package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="final_project.html" class="btn btn-neutral float-left" title="final_project package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Muthu Venkataraman.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
