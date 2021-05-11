@@ -6,6 +6,9 @@ verify_ssl = true
 [dev-packages]
 pytest = "*"
 pytest-cov = "*"
+pytest-django = "*"
+django-debug-toolbar = "*"
+factory-boy = "*"
 
 [packages]
 csci-utils = {git = "https://github.com/csci-e-29/2021sp-csci-utils-devfulcrum"}
@@ -26,6 +29,14 @@ numpy = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
 travis-sphinx = "*"
+django-environ = "*"
+django-model-utils = "*"
+argon2-cffi = "*"
+django-allauth = "*"
+django-crispy-forms = "*"
+django-extensions = "*"
+coreapi = "*"
+coreapi-cli = "*"
 
 [requires]
 python_version = "3.8"
