@@ -23,6 +23,9 @@ aiohttp = "*"
 djangorestframework = "*"
 scikit-learn = "*"
 numpy = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
+travis-sphinx = "*"
 
 [requires]
 python_version = "3.8"
