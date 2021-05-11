@@ -6,6 +6,7 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b2c9601052434e2769fb/test_coverage)](https://codeclimate.com/github/devfulcrum/2021sp-final-project-devfulcrum/test_coverage)
 
+Please refer to Project Documents here: https://devfulcrum.github.io/2021sp-final-project-devfulcrum/
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
