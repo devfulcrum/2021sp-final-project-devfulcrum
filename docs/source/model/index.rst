@@ -4,7 +4,9 @@ Regression Model
 
 
 The data visualization is extended through another layer of linear regression model live execution
-and projects next three days of expected Covid cases and Vaccine data.
+and projects next three days of expected Covid cases and Vaccine data.  The idea here is to provide an
+outlet of models integration.  I plan to leverage machine learning models to interpret the data
+and provide deeper actionable insights.
 
 
 .. code-block::
