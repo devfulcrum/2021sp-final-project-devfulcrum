@@ -38,6 +38,7 @@ jobs:
       # credentials entered at https://travis-ci.com/csci-e-29/YOUR_PSET_REPO_NAME/settings
       # DO NOT commit these variables to git.
       - pipenv run python -m final_project
+      - pipenv run python submit.py
       - pipenv run make -C docs/ html
       - touch docs/build/html/.nojekyll
       deploy:
